@@ -15,7 +15,7 @@ public class AdvertisingIdPlugin extends ReflectiveCordovaPlugin {
 
     @CordovaMethod(ExecutionThread.WORKER)
     
-    protected void getInfo(CallbackContext callbackContext) throws JSONException {
+    protected void getInfo(CallbackContext callbackContext) throws Exception {
         throw new Exception("Error");
 
         Context context = this.cordova.getActivity().getApplicationContext();
