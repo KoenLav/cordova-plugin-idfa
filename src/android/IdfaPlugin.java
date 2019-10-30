@@ -9,15 +9,13 @@ import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 
 import org.apache.cordova.CallbackContext;
 import org.json.JSONObject;
-import org.json.JSONException;
-
 
 public class IdfaPlugin extends ReflectiveCordovaPlugin {
     private static final String TAG = "IdfaPlugin";
 
     @CordovaMethod(ExecutionThread.WORKER)
-    protected void getInfo(CallbackContext callbackContext) throws JSONException {
-        throw new JSONException("Error");
+    protected void getInfo(CallbackContext callbackContext) throws Exception {
+        throw new Exception();
 
         Context context = this.cordova.getActivity().getApplicationContext();
 
