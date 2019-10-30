@@ -15,15 +15,13 @@ public class IdfaPlugin extends ReflectiveCordovaPlugin {
 
     @CordovaMethod(ExecutionThread.WORKER)
     protected void getInfo(CallbackContext callbackContext) throws Exception {
-        throw new Exception();
-
         Context context = this.cordova.getActivity().getApplicationContext();
 
         AdvertisingIdClient.Info info = AdvertisingIdClient.getAdvertisingIdInfo(context);
 
         JSONObject result = new JSONObject();
 
-        result.put("id", info.getId());
+        result.put("aaid", info.getId());
         result.put("limitAdTracking", info.isLimitAdTrackingEnabled());
 
         callbackContext.success(result);
