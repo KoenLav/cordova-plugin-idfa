@@ -1,9 +1,9 @@
-package by.chemerisuk.cordova.advertising;
+package cordova.advertising;
 
 import android.content.Context;
 
-import by.chemerisuk.cordova.support.CordovaMethod;
-import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
+import cordova.support.CordovaMethod;
+import cordova.support.ReflectiveCordovaPlugin;
 
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 

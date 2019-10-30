@@ -1,17 +1,17 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android"
-           id="cordova-plugin-idfa"
+           id="cordova-plugin-advertising-id"
       version="1.1.0">
 
-    <name>cordova-plugin-idfa</name>
-    <description>Cordova plugin to get Advertising ID (IDFA or AAID)</description>
+    <name>cordova-plugin-advertising-id</name>
+    <description>Cordova plugin to get Advertising ID</description>
     <license>MIT</license>
     <keywords>cordova</keywords>
-    <repo>https://github.com/chemerisuk/cordova-plugin-idfa</repo>
-    <issue>https://github.com/chemerisuk/cordova-plugin-idfa/issues</issue>
+    <repo>https://github.com/koenlav/cordova-plugin-advertising-id</repo>
+    <issue>https://github.com/koenlav/cordova-plugin-advertising-id/issues</issue>
 
-    <js-module src="www/Idfa.js" name="Idfa">
-        <merges target="cordova.plugins.idfa" />
+    <js-module src="www/advertisingId.js" name="advertisingId">
+        <merges target="cordova.plugins.advertisingId" />
     </js-module>
 
     <engines>
@@ -24,7 +24,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Idfa">
-                <param name="android-package" value="by.chemerisuk.cordova.advertising.AdvertisingIdPlugin" />
+                <param name="android-package" value="cordova.advertising.AdvertisingIdPlugin" />
             </feature>
         </config-file>
 
@@ -36,7 +36,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <framework src="com.google.android.gms:play-services-ads-identifier:$PLAY_SEVICES_VERSION" />
 
-        <source-file src="src/android/AdvertisingIdPlugin.java" target-dir="src/by/chemerisuk/cordova/advertising/" />
+        <source-file src="src/android/AdvertisingIdPlugin.java" target-dir="src/cordova/advertising/" />
     </platform>
 
 </plugin>
