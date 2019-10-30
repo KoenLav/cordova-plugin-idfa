@@ -11,17 +11,21 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONObject;
 
 
-public class IdfaPlugin extends ReflectiveCordovaPlugin {
-    private static final String TAG = "IdfaPlugin";
+public class AdvertisingIdPlugin extends ReflectiveCordovaPlugin {
+    private static final String TAG = "AdvertisingIdPlugin";
 
     @CordovaMethod(ExecutionThread.WORKER)
-    protected void getInfo(CallbackContext callbackContext) throws Exception {
+    
+    protected void getInfo(CallbackContext callbackContext) throws JSONException {
         Context context = this.cordova.getActivity().getApplicationContext();
+
         AdvertisingIdClient.Info info = AdvertisingIdClient.getAdvertisingIdInfo(context);
 
-        JSONObject result = new JSONObject();
-        result.put("aaid", info.getId());
+        JSONObject result = new JSONObject().getId();
+
+        result.put("id", info.getId());
         result.put("limitAdTracking", info.isLimitAdTrackingEnabled());
+
         callbackContext.success(result);
     }
 }
