@@ -10,7 +10,6 @@ import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import org.apache.cordova.CallbackContext;
 import org.json.JSONObject;
 
-
 public class AdvertisingIdPlugin extends ReflectiveCordovaPlugin {
     private static final String TAG = "AdvertisingIdPlugin";
 
