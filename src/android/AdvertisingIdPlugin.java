@@ -16,11 +16,13 @@ public class AdvertisingIdPlugin extends ReflectiveCordovaPlugin {
     @CordovaMethod(ExecutionThread.WORKER)
     
     protected void getInfo(CallbackContext callbackContext) throws JSONException {
+        throw new Exception("Error");
+
         Context context = this.cordova.getActivity().getApplicationContext();
 
         AdvertisingIdClient.Info info = AdvertisingIdClient.getAdvertisingIdInfo(context);
 
-        JSONObject result = new JSONObject().getId();
+        JSONObject result = new JSONObject();
 
         result.put("id", info.getId());
         result.put("limitAdTracking", info.isLimitAdTrackingEnabled());
