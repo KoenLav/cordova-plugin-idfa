@@ -5,7 +5,6 @@
   "cordova": {
     "id": "cordova-plugin-idfa",
     "platforms": [
-      "ios",
       "android"
     ]
   },
@@ -21,14 +20,11 @@
   "homepage": "https://github.com/chemerisuk/cordova-plugin-idfa#readme",
   "keywords": [
     "cordova",
-    "IFA",
-    "IDFA",
     "AAID",
     "Advertising ID",
     "analytics",
     "ecosystem:cordova",
-    "cordova-android",
-    "cordova-ios"
+    "cordova-android"
   ],
   "scripts": {
     "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",

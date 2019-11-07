@@ -17,7 +17,6 @@
 
 ## Supported Platforms
 
-- iOS
 - Android
 
 ## Installation
@@ -30,11 +29,11 @@ Use variable `PLAY_SERVICES_ADS_VERSION` to override dependency version on Andro
 Every method returns a promise that fulfills when a call was successful.
 
 ### getInfo()
-Returns advertising id with `limitAdTracking` flag. On iOS use `idfa` property, on Android use `aaid`.
+Returns advertising id with `limitAdTracking` flag.
 ```js
 cordova.plugins.idfa.getInfo().then(function(info) {
     if (!info.limitAdTracking) {
-        console.log(info.idfa || info.aaid);
+        console.log(info.aaid);
     }
 });
 ```
