@@ -1,7 +1,8 @@
 {
-  "name": "cordova-plugin-advertising-id",
-  "version": "1.1.0",
-  "description": "Cordova plugin for getting Advertising ID",
+  "name": "cordova-plugin-idfa",
+  "version": "2.0.0",
+  "description": "Cordova plugin for getting Advertising ID (IDFA or AAID)",
+  "types": "./types/index.d.ts",
   "cordova": {
     "id": "cordova-plugin-advertising-id",
     "platforms": [
@@ -18,6 +19,7 @@
     "url": "https://github.com/chemerisuk/cordova-plugin-idfa/issues"
   },
   "homepage": "https://github.com/chemerisuk/cordova-plugin-idfa#readme",
+  "funding": "https://github.com/chemerisuk/cordova-plugin-idfa?sponsor=1",
   "keywords": [
     "cordova",
     "Advertising ID",
@@ -26,7 +28,7 @@
     "cordova-android"
   ],
   "scripts": {
-    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
+    "version": "perl -p -i -e 's/(version=)\"\\d+\\.\\d+\\.\\d+\"/$1\"'$npm_package_version'\"$2/' plugin.xml && git add plugin.xml",
     "postversion": "git push && git push --tags"
   }
 }
