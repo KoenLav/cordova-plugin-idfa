@@ -2,31 +2,26 @@ package cordova.advertising;
 
 import android.content.Context;
 
-import cordova.support.CordovaMethod;
-import cordova.support.ReflectiveCordovaPlugin;
+import by.chemerisuk.cordova.support.CordovaMethod;
+import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
 
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 
 import org.apache.cordova.CallbackContext;
 import org.json.JSONObject;
 
-public class AdvertisingIdPlugin extends ReflectiveCordovaPlugin {
-    private static final String TAG = "AdvertisingIdPlugin";
+public class IdfaPlugin extends ReflectiveCordovaPlugin {
+    private static final String TAG = "IdfaPlugin";
 
     @CordovaMethod(ExecutionThread.WORKER)
-    
     protected void getInfo(CallbackContext callbackContext) throws Exception {
-        throw new Exception("Error");
-
         Context context = this.cordova.getActivity().getApplicationContext();
 
         AdvertisingIdClient.Info info = AdvertisingIdClient.getAdvertisingIdInfo(context);
 
         JSONObject result = new JSONObject();
-
-        result.put("id", info.getId());
-        result.put("limitAdTracking", info.isLimitAdTrackingEnabled());
-
+        result.put("aaid", info.getId());
+        result.put("trackingLimited", info.isLimitAdTrackingEnabled());
         callbackContext.success(result);
     }
 }
